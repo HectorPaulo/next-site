@@ -2,27 +2,36 @@ import React from "react";
 import Image from "next/image";
 import styles from "./page.module.scss";
 import Button from "@/components/button/Button";
-import { items } from "./data.js";
+import { items, Item } from "./data";
 import { notFound } from "next/navigation";
 
-const getData = (cat) => {
+type Params = {
+    category: keyof typeof items;
+};
+
+const getData = (cat: keyof typeof items): Item[] | undefined => {
     const data = items[cat];
 
     if (data) {
         return data;
     }
 
-    return notFound();
+    return undefined;
 };
 
-const Category = ({params}) => {
+const Category = ({ params }: { params: Params }) => {
     const data = getData(params.category);
+
+    if (!data) {
+        return notFound();
+    }
+
     return (
         <div className={styles.container}>
             <h1 className={styles.catTitle}> {params.category} </h1>
-            {data.map((item)=>(
+            {data.map((item) => (
                 <div className={styles.item} key={item.id}>
-                    <div className={StyleSheet.content}>
+                    <div className={styles.content}>
                         <h1 className={styles.title}>
                             {item.title}
                         </h1>
