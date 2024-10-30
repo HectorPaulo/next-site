@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
 import styles from "./navbar.module.css";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 
@@ -41,7 +42,9 @@ const links = [
 const Navbar = () => {
     return (
         <div className={styles.container}>
-            <Link href="/" className={styles.logo}>papulogo</Link>
+            <Link href="/" className={styles.logo}>
+                <Image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbtVQb5qyyvxaZNtwXgk7Bi5P4JzLOplUIVw&s" alt="Logo" width={50} height={50} />
+            </Link>
             <div className={styles.links}>
                 <DarkModeToggle />
                 {links.map((link) => (
