@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./page.module.scss";
 import Button from "@/components/button/Button";
 import { items, Item } from "./data";
 import { notFound } from "next/navigation";
+import styles from "./page.module.css";
 
 type Params = {
     category: keyof typeof items;

@@ -16,7 +16,7 @@ export default function Home() {
       </div>
       <div className={styles.item}>
         <Image
-          src="https://images.pexels.com/photos/3184306/pexels-photo-3184306.jpeg?auto=compress&cs=tinysrgb&w=300"
+          src="https://images.pexels.com/photos/3183183/pexels-photo-3183183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt=""
           className={styles.img}
           width={800}
